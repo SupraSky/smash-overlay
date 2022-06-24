@@ -3,12 +3,9 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8" />
-	<title>ADMIN Overlay Smash By SupraSky</title>
+	<title>Admin Overlay Smash By SupraSky</title>
 	<link rel="stylesheet" href="./assets/admin.css" />
-	<!-- <script src="./assets/functions.js"></script> -->
-	
 </head>
-
 <body>
 	<?php
 	function getData($line) {
@@ -19,18 +16,8 @@
 		echo fgets($filero);
 		fclose($filero);
 	}
-	// if ($_SERVER["REQUEST_METHOD"] == "GET") {
-		// copy("assets/OverlayData.txt","assets/OverlayData_buffer.txt");
-		// $filereset = fopen("assets/OverlayData.txt", "w");
-		// fwrite($filereset," \n \n \n \n \n \n \n \n \n \n \n \n");
-		// fclose($filereset);
-	// }
 	?>
-	<!--<form method="get" action="<?php echo $_SERVER['PHP_SELF'];?>"> -->
-	<!--	<input id="reset" type="submit"value="RESET"> -->
-	<!-- </form> -->
 	<form action="./updateData.php" method="POST" target="_top">
-
 		<fieldset>
 		<legend>Tournament</legend>
 		<table>
@@ -50,8 +37,8 @@
 		<table>
 			<tr>
 				<td style="width:33%"><label for="p1tag">Tag : </label></td>
-				<td style="width:33%"><label for="p1name">Pseudo : </label></td>
-				<td style="width:33%"><label for="p1flag">Pays : </label></td>
+				<td style="width:33%"><label for="p1name">Name : </label></td>
+				<td style="width:33%"><label for="p1flag">Country : </label></td>
 			</tr>
 			<tr>
 				<td><input type="text" id="p1tag" name="p1tag" value="<?php getData(2) ?? ""?>"></td>
@@ -75,8 +62,8 @@
 		<table>
 			<tr>
 				<td style="width:33%"><label for="p2tag">Tag : </label></td>
-				<td style="width:33%"><label for="p2name">Pseudo : </label></td>
-				<td style="width:33%"><label for="p2flag">Pays : </label></td>
+				<td style="width:33%"><label for="p2name">Name : </label></td>
+				<td style="width:33%"><label for="p2flag">Country : </label></td>
 			</tr>
 			<tr>
 				<td><input type="text" id="p2tag" name="p2tag" value="<?php getData(3) ?? ""?>"></td>
@@ -114,7 +101,7 @@
 			</tr>
 		</table>
 		</fieldset>
-		<input type="submit" value="Mettre à jour" >
+		<input type="submit" value="Update Overlay" >
 	</form>
 </body>
 </html>
