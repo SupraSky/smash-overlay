@@ -1,5 +1,5 @@
 # smash-overlay
-A streaming overlay to be used in OBS 
+A streaming overlay to be used in OBS as a browser source
 
 ============================
 
