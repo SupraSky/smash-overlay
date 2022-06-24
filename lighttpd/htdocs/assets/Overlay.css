@@ -1,0 +1,86 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(./Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(./Montserrat-Italic-VariableFont_wght.ttf);
+  font-style: italic;
+}
+
+body
+{
+    margin-top:0px;
+	width: 1980px;
+    height: 1080px;
+    overflow:hidden;
+	font-family: Montserrat;
+	font-weight: 500;
+	font-size:36px;
+	background-image:url(./dummy.png);
+	background-repeat:no-repeat;
+	background-position: right top;
+	background-attachment: fixed;	
+}
+table {
+	margin-right: auto;
+    margin-left: auto;
+	text-align:center;
+	background-color:rgba(140, 0, 0, 1);
+}
+
+td {
+	padding:1px 5px;/*TOP&BOTTOM RIGHT&LEFT */
+	height:auto;
+}
+.Flag {
+	height:auto;
+	width:40px;
+	padding-top:5px;
+}
+
+.Tag {
+	font-weight: bold;
+}
+.Name {
+	
+}
+.Score {
+	font-weight: 800;
+	font-size:1.5em; 
+	padding:0px 2px;/*TOP&BOTTOM RIGHT&LEFT */
+
+}
+td.TourInfo {
+	background-color:rgba(100, 0, 0, 1);
+	border-width:0px 3px;
+	border-style:hidden;
+	height:auto;
+	font-size:0.8em;
+}
+#P1Ingame {
+	background-color: black;
+	color:white;
+	position:fixed;
+	top:1006px;
+	left:525px;
+	font-size:23px;
+	line-height: 1;
+	border:hidden;
+	width:188px;
+	height:24px;
+	text-align:center;
+}
+#P2Ingame {
+	background-color: black;
+	color:white;
+	position:fixed;
+	top:1006px;
+	left:1265px;
+	font-size:23px;
+	line-height: 1;
+	border:hidden;
+	width:188px;
+	height:24px;
+	text-align:center;
+}

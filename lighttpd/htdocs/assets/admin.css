@@ -1,0 +1,55 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(./Montserrat-VariableFont_wght.ttf);
+}
+
+body{
+	background-color:#464646;
+	font-family: Montserrat Regular;
+	text-align:center;
+	font-size:28px;
+	color:lightgray;
+}
+legend{
+	font-family: Montserrat Semibold;
+}
+input{
+	font-size:22px;
+	text-align:center;
+}
+
+#p1tag,#p2tag {
+	width : 200px;
+}
+#swap {
+	
+}
+table {
+	width:100%;
+}
+select {
+  font-family: Montserrat Regular;
+  width: 90%;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+input[type=submit] {
+	padding:5px 30px;
+	font-size:28px;
+	font-weight:bold;
+	width:80%;
+	margin:5px 0px;
+}
+#reset {
+	background-color: #f1f1f1;
+	color:black;
+	border: none;
+	border-radius: 4px;
+	padding: 3px 40px;
+	text-decoration:none;
+}
+#reset:hover{
+	background-color: cyan;
+}
