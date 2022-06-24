@@ -18,9 +18,10 @@ OR Use the provided "AdminPage" shortcut
 4.When done, you can close the "Start Server" window
 
 ============================
-Technologies & Products I used ! 
-lighttpd for Windows binary package 1.4.49-1 by dtech(.hu)
-PHP 8.1.7
+
+Technologies & Products I used :
+- lighttpd for Windows binary package 1.4.49-1 by dtech(.hu)
+- PHP 8.1.7
 
 Written using :
 - HTML/CSS
