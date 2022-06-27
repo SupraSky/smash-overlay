@@ -18,6 +18,12 @@ OR Use the provided "AdminPage" shortcut
 
 4. When done, you can close the "Start Server" window
 
+Optional :
+
+To add your own flags, simply drop them in folder "lighttpd/assets/flags"
+Make sure to use a squared and transparent picture, prefered sized 800x800 pixels
+
+
 ============================
 
 Technologies & Products I used :
@@ -28,3 +34,24 @@ Written using :
 - HTML/CSS
 - JavaScript
 - PHP
+
+============================
+
+Patch Notes :
+
+1.1 :
+
+- Fixed the "Start Server" shortcut and replaced it with a batch file instead
+- Fixed the width of the middle text displaying Tournament Name & Set to be the same length
+- Changed the way flags are handled to ensure they stick to the overlay value, so you don't have to re-select them everytime
+ 
++ Added the feature to change overlay and text colors
+
+1.0 :
+
+- Initial release
+
+
+TO DO :
+
+- Intégration d'une liste des participants via start.gg

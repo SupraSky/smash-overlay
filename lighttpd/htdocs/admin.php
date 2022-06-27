@@ -7,16 +7,6 @@
 	<link rel="stylesheet" href="./assets/admin.css" />
 </head>
 <body>
-	<?php
-	function getData($line) {
-		$filero = fopen("assets/OverlayData.txt", "r");
-		for($x = 0; $x != $line; $x++) {
-			fgets($filero);
-		}
-		echo fgets($filero);
-		fclose($filero);
-	}
-	?>
 	<form action="./updateData.php" method="POST" target="_top">
 		<fieldset>
 		<legend>Tournament</legend>
@@ -46,11 +36,12 @@
 			
 			<td>
 				<select id="p1flag" name="p1flag">
-					<option value="France">France</option>
-					<option value="Belgique">Belgique</option>
-					<option value="Bretagne">Bretagne</option>
-					<option value="OM">OM</option>
-					<option value="None" selected>None</option>
+					<?php getFlags(1) ?>
+					<!-- <option value="France">France</option> -->
+					<!-- <option value="Belgique">Belgique</option> -->
+					<!-- <option value="Bretagne">Bretagne</option> -->
+					<!-- <option value="OM">OM</option> -->
+					<!-- <option value="None" selected>None</option> -->
 				</select>
 			</td>
 			</tr>
@@ -71,11 +62,12 @@
 			
 			<td>
 				<select id="p2flag" name="p2flag">
-					<option value="France">France</option>
-					<option value="Belgique">Belgique</option>
-					<option value="Bretagne">Bretagne</option>
-					<option value="OM">OM</option>
-					<option value="None" selected>None</option>
+					<?php getFlags(2) ?>
+					<!-- <option value="France">France</option> -->
+					<!-- <option value="Belgique">Belgique</option> -->
+					<!-- <option value="Bretagne">Bretagne</option> -->
+					<!-- <option value="OM">OM</option> -->
+					<!-- <option value="None" selected>None</option> -->
 				</select>
 			</td>
 			</tr>
@@ -102,6 +94,79 @@
 		</table>
 		</fieldset>
 		<input type="submit" value="Update Overlay" >
+		<fieldset>
+			<legend>Color personalization (Use HEX values)</legend>
+		<table id="colors">
+			<tr>
+				<td><label for="colorplayer">Players : </label></td>
+				<td ><label for="colortour">Tournament : </label></td>
+				<td ><label for="colortext">Text : </label></td>
+			</tr>
+			<tr>
+				<td style="width:33%">
+					<input type="text" id="colorplayer" name="colorplayer" value="<?php getData(11) ?? ""?>">
+					<p style="background-color:<?php echo "#";getData(11) ?? "" ?>;color:<?php echo "#";getData(13) ?? "" ?>">Player 1</p>
+				</td>
+				<td style="width:33%">
+					<input type="text" id="colortour" name="colortour" value="<?php getData(12) ?? ""?>">
+					<p style="background-color:<?php echo "#";getData(12) ?? "" ?>;color:<?php echo "#";getData(13) ?? "" ?>">Tournament</p>
+				</td>
+				<td style="width:33%">
+					<input type="text" id="colortext" name="colortext" value="<?php getData(13) ?? ""?>">
+					<p style="background-color:<?php echo "#";getData(11) ?? "" ?>;color:<?php echo "#";getData(13) ?? "" ?>">Player 2</p>
+				</td>
+			</tr>
+			
+		</table>	
+		</fieldset>
 	</form>
+	
+	<script>
+	//Cacher le panel couleurs persos
+	function togglePanel() {
+	var x = document.getElementById("colors");
+		if (x.style.display == "none") {
+		x.style.display = "table";
+		}
+	}
+	function defaultColor() {
+		document.getElementById("colors").style.display = "none";
+	}	
+	</script>
+	
+	<?php
+	function getData($line) {
+		$filero = fopen("assets/OverlayData.txt", "r");
+		for($x = 0; $x != $line; $x++) {
+			fgets($filero);
+		}
+		echo fgets($filero);
+		fclose($filero);
+	}
+	function getFlags($player) {
+		$flags= glob("assets/flags/*.png");
+		if( $player == 1 ) {
+			$filero = fopen("assets/OverlayData.txt", "r");
+			$oldvalue = fgets($filero);
+			fclose($filero);
+		}
+		else {
+			$filero = fopen("assets/OverlayData.txt", "r");
+			fgets($filero);
+			$oldvalue = fgets($filero);
+			fclose($filero);
+		}
+		foreach ($flags as $value) {
+			$value = substr($value,13);
+			$text = ucfirst(strtolower(chop($value,".png")));
+			if ( $oldvalue == $value."\n" ) {
+				echo "\t\t\t\t\t<option value=\"".$value."\" selected >".$text."</option>\n";
+			}
+			else {
+				echo "\t\t\t\t\t<option value=\"".$value."\" >".$text."</option>\n";
+			}
+		}
+	}
+	?>
 </body>
 </html>

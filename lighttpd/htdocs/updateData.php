@@ -3,6 +3,7 @@ $player1 = array();//"country"=>"None","tag"=>"T1","name"=>"Mkleo");
 $player2 = array();//"country"=>"None","tag"=>"SLY","name"=>"Glutonny");
 $tournament = array();//"name"=>"Pound 2022","set"=>"Grand Finals");
 $scores = array();//"p1score"=>"0","p2score"=>"0");
+$styles = array();
 $swapped;
 
 copy("assets/OverlayData.txt","assets/OverlayData_buffer.txt");
@@ -69,11 +70,25 @@ fwrite($file, $scores['p2']."\n");
 $filevalue = fgets($filero);
 if ( $_POST['swap'] == "Yes") {
 	$swapped= "Yes";
-	fwrite($file, $swapped);
+	fwrite($file, $swapped."\n");
 }
 else {
 	$swapped= "No";
-	fwrite($file, $swapped);
+	fwrite($file, $swapped."\n");
+}
+$filevalue = fgets($filero);
+if ( $_POST['colorplayer'] != 0 or $_POST['colorplayer'] != $filevalue ) {
+	$styles['players'] = $_POST['colorplayer'];
+	fwrite($file, $styles['players']."\n");
+}
+$filevalue = fgets($filero);
+if ( $_POST['colortour'] != 0 or $_POST['colortour'] != $filevalue ) {
+	$styles['tournament'] = $_POST['colortour'];
+	fwrite($file, $styles['tournament']."\n");
+}$filevalue = fgets($filero);
+if ( $_POST['colortext'] != 0 or $_POST['colortext'] != $filevalue ) {
+	$styles['font'] = $_POST['colortext'];
+	fwrite($file, $styles['font']);
 }
 while(fgets($filero) != FALSE) {
 	fwrite($file,"");
